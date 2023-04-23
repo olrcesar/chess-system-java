@@ -101,7 +101,7 @@ public class King extends ChessPiece{
 
 			// #special move clastling queenside rook
 			Position pTQ = new Position(position.getRow(), position.getColumn() - 4);
-			if(testRookCastling(pTK)) {
+			if(testRookCastling(pTQ)) {
 				Position p1 = new Position(position.getRow(), position.getColumn() - 1);
 				Position p2 = new Position(position.getRow(), position.getColumn() - 2);
 				Position p3 = new Position(position.getRow(), position.getColumn() - 3);
