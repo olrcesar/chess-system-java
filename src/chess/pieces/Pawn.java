@@ -99,9 +99,7 @@ public class Pawn extends ChessPiece{
 						getBoard().piece(right) == chessMatch.getEnPassantVulnerable()) {
 					mat[position.getRow() + 1][right.getColumn()] = true;
 				}
-				
 			}
-			
 		}
 		return mat;
 	}
