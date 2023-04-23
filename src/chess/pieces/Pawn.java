@@ -39,7 +39,7 @@ public class Pawn extends ChessPiece{
 				mat[p.getRow()][p.getColumn()] = true;
 			}
 			
-			p.setValues(position.getRow() -  1, position.getColumn() + 1);
+			p.setValues(position.getRow() - 1, position.getColumn() + 1);
 			if(getBoard().positionExists(p) && isThereOpponentPiece(p)) {
 				mat[p.getRow()][p.getColumn()] = true;
 			}
@@ -50,13 +50,13 @@ public class Pawn extends ChessPiece{
 				Position left = new Position(position.getRow(), position.getColumn() - 1);
 				if(getBoard().positionExists(left) && isThereOpponentPiece(left) &&
 						getBoard().piece(left) == chessMatch.getEnPassantVulnerable()) {
-					mat[position.getRow() - 1][left.getColumn()] = true;
+					mat[left.getRow() - 1][left.getColumn()] = true;
 				}
 				
 				Position right = new Position(position.getRow(), position.getColumn() + 1);
 				if(getBoard().positionExists(right) && isThereOpponentPiece(right) &&
 						getBoard().piece(right) == chessMatch.getEnPassantVulnerable()) {
-					mat[position.getRow() + 1][right.getColumn()] = true;
+					mat[right.getRow() + 1][right.getColumn()] = true;
 				}
 			}
 			
@@ -89,15 +89,15 @@ public class Pawn extends ChessPiece{
 			if(position.getRow() == 4) {
 				
 				Position left = new Position(position.getRow(), position.getColumn() - 1);
-				if(getBoard().thereIsAPiece(left) && isThereOpponentPiece(left) &&
+				if(getBoard().positionExists(left) && isThereOpponentPiece(left) &&
 						getBoard().piece(left) == chessMatch.getEnPassantVulnerable()) {
-					mat[position.getRow() + 1][left.getColumn()] = true;
+					mat[left.getRow() + 1][left.getColumn()] = true;
 				}
 				
 				Position right = new Position(position.getRow(), position.getColumn() + 1);
-				if(getBoard().thereIsAPiece(right) && isThereOpponentPiece(right) &&
+				if(getBoard().positionExists(right) && isThereOpponentPiece(right) &&
 						getBoard().piece(right) == chessMatch.getEnPassantVulnerable()) {
-					mat[position.getRow() + 1][right.getColumn()] = true;
+					mat[right.getRow() + 1][right.getColumn()] = true;
 				}
 			}
 		}
